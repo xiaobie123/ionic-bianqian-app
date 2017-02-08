@@ -1,0 +1,52 @@
+{
+	"friendsdynamic":[
+	{
+		"id":"1",
+		"name":"小明",
+		"headimg":"assets/img/speakers/cheetah.jpg",
+		"img":[],
+		"contentText":"今天天气不是太好",
+		"like":10,
+		"isLike":false,
+		"comments":20,
+		"date":"11月24日"
+
+	},
+	{
+		"id":"2",
+		"name":"小黄",
+		"headimg":"assets/img/speakers/cheetah.jpg",
+		"img":["assets/img/speakers/cheetah.jpg","assets/img/speakers/duck.jpg","assets/img/speakers/eagle.jpg"],
+		"contentText":"今天天气不是太好",
+		"like":10,
+		"isLike":false,
+		"comments":20,
+		"date":"11月24日"
+
+	},
+	{
+		"id":"3",
+		"name":"小黄",
+		"headimg":"assets/img/speakers/cheetah.jpg",
+		"img":["assets/img/speakers/cheetah.jpg"],
+		"contentText":"今天天气不是太好",
+		"like":10,
+		"isLike":false,
+		"comments":20,
+		"date":"11月24日"
+
+	},{
+		"id":"4",
+		"name":"小白",
+		"headimg":"assets/img/speakers/cheetah.jpg",
+		"img":["assets/img/speakers/cheetah.jpg"],
+		"contentText":"今天天气不是太好",
+		"like":10,
+		"isLike":false,
+		"comments":20,
+		"date":"11月24日"
+
+	}
+
+	]
+}

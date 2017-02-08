@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>朋友圈</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content speaker-list">
+<ion-card *ngFor="let Friend of Friends">
+  <ion-item>
+    <ion-avatar item-left>
+      <img src={{Friend.headimg}}>
+    </ion-avatar>
+    <h2>{{Friend.name}}</h2>
+  </ion-item>
+  <ion-grid>
+  <ion-row>
+    <ion-col width-33 *ngFor="let Fimg of Friend.img">
+    <img src={{Fimg}} (click)="openImage(Fimg)">
+  </ion-col>
+  </ion-row>
+</ion-grid>
+  <ion-card-content>
+    <p>{{Friend.contentText}}</p>
+  </ion-card-content>
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small (click)="clickLike(Friend)">
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>{{Friend.like}}赞</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small (click)="clickComments(Friend)">
+        <ion-icon name="text"></ion-icon>
+        <div>{{Friend.comments}}评论</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        {{Friend.date}}
+      </ion-note>
+    </ion-col>
+  </ion-row>
+</ion-card>
+<ion-fab bottom right #fab><!-- 右下显示 -->
+    <button ion-fab color="secondary" (click)="WriteDynamic()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

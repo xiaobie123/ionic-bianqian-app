@@ -1,0 +1,87 @@
+<ion-header><!-- head -->
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
+      <ion-segment-button value="all">
+        所有
+      </ion-segment-button>
+      <!--因为是双向帮定 所以变化是双向的即 value 《-》 segment,-->
+      <ion-segment-button value="favorites"> 
+        收藏
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentFilter()">
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="updateSchedule()"
+                   placeholder="搜索">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<!-- content -->
+<ion-content>
+  <ion-list #scheduleList [hidden]="shownSessions === 0"><!-- 第一部分 -->
+
+    <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
+
+      <ion-item-divider sticky>
+        <ion-label>
+          {{group.time}}
+        </ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="session.tracks[0] | lowercase" [hidden]="session.hide">
+
+        <button ion-item (click)="goToSessionDetail(session)">
+          <h3>{{session.name}}</h3>
+          <p>
+            {{session.timeStart}} &mdash;
+            {{session.timeEnd}}:
+            {{session.location}}
+          </p>
+        </button>
+
+        <ion-item-options>
+          <button ion-button color="favorite" (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">
+            收藏
+          </button>
+          <button ion-button color="danger" (click)="removeFavorite(slidingItem, session, '移除收藏')" *ngIf="segment === 'favorites'">
+            移除
+          </button>
+          <button ion-button color="danger">
+            修改
+          </button>
+        </ion-item-options>
+
+      </ion-item-sliding>
+
+    </ion-item-group>
+
+  </ion-list>
+
+  <ion-list-header [hidden]="shownSessions > 0">
+      无内容
+  </ion-list-header>
+
+  <ion-fab bottom right #fab><!-- 右下显示 -->
+    <button ion-fab><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab color="vimeo" (click)="writenote(fab)"><ion-icon name="create"></ion-icon></button>
+      <button ion-fab color="google" (click)="openSocial('Google+', fab)"><ion-icon name="locate"></ion-icon></button>
+      <button ion-fab color="twitter" (click)="chart(fab)"><ion-icon name="stats"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+
+</ion-content>

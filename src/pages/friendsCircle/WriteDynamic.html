@@ -1,0 +1,30 @@
+<ion-header>
+<ion-navbar #navber showBackButton >
+    <!-- <ion-title>写动态</ion-title> -->
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="dismiss()">
+       	 取消
+      </button>
+    </ion-buttons>
+</ion-navbar>
+</ion-header>
+<ion-content>
+	<form #submitForm="ngForm" novalidate (ngSubmit)="submit(submitForm)">
+		<ion-list no-lines>
+			<ion-item>
+				<ion-label stacked color="primary">这一刻的想法...</ion-label>
+				<ion-textarea [(ngModel)]="supportMessage" name="supportQuestion" #supportQuestion="ngModel" rows="6" required></ion-textarea>
+			</ion-item>
+		</ion-list>
+
+		<p [hidden]="supportQuestion.valid || submitted === false" color="danger" padding-left>
+			内容不能为空
+		</p>
+		<div padding-right padding-left>
+			<ion-icon class="addImg" name="add" color="secondary"></ion-icon>
+		</div>
+		<div padding>
+			<button ion-button block type="submit">发送</button>
+		</div>
+	</form>
+</ion-content>

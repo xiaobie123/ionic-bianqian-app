@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Map</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="map-page">
+  <div style="" #mapCanvas id="map_canvas"></div>
+  <ion-fab bottom right #fab><!-- 右下显示 -->
+    <button ion-fab (click)="locate()"><ion-icon name="locate"></ion-icon></button>
+  </ion-fab>
+</ion-content>

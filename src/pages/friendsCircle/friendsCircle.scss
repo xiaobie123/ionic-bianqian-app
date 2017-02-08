@@ -1,0 +1,31 @@
+page-writeDynamic-list{
+	[showbackbutton] .back-button{
+		display:inline-block;
+	}
+
+	.addImg{
+		font-size: 3.5em;
+	    border: 1px solid;
+	    width: 1.2em;
+	    text-align: center;
+	}
+}
+
+page-FridensCircledetail-detail{
+	.detail-card{
+		box-shadow:none;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.34);
+	}
+	.item-inner{
+		border-bottom:none !important;
+	}
+	.item-comment{
+		padding-left:40px;
+		p{
+			margin:0;
+		}
+		.item-comment-name{
+			color:color($colors, primary)
+		}
+	}
+}

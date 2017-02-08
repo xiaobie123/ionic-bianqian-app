@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{speaker.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="speaker-detail">
+
+  <div text-center>
+    <img [src]="speaker.profilePic" [alt]="speaker.name"><br>
+
+    <button ion-button icon-only clear small color="twitter">
+      <ion-icon name="logo-twitter"></ion-icon>
+    </button>
+    <button ion-button icon-only clear small color="github">
+      <ion-icon name="logo-github"></ion-icon>
+    </button>
+    <button ion-button icon-only clear small color="instagram">
+      <ion-icon name="logo-instagram"></ion-icon>
+    </button>
+  </div>
+  <ion-list>
+  <ion-item>
+    <ion-icon name="happy" color="primary" item-left></ion-icon>
+      帐号：15498753
+  </ion-item>
+  <ion-item>
+    <ion-icon name="person" color="secondary" item-left></ion-icon>
+      备注：小明
+  </ion-item>
+  <ion-item>
+    <ion-icon name="call" color="danger" item-left></ion-icon>
+      电话：5979413232
+  </ion-item>
+  <ion-item>
+    <ion-icon name="cog" color="light" item-left></ion-icon>
+      动态权限设置
+  </ion-item>
+</ion-list>
+  <p>{{speaker.about}}</p>
+
+</ion-content>

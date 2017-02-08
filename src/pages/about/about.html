@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>About</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="about-header">
+    <img src="assets/img/ionic-logo-white.svg" alt="ionic logo">
+  </div>
+  <div padding class="about-info">
+    <h4>Ionic 便签</h4>
+
+    <ion-list no-lines>
+      <ion-item>
+        <ion-icon name="calendar" item-left></ion-icon>
+        <ion-label>日期</ion-label>
+        <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="conferenceDate"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="pin" item-left></ion-icon>
+        <ion-label>位置</ion-label>
+        <ion-select>
+          <ion-option value="madison" selected>Madison, WI</ion-option>
+          <ion-option value="austin">Austin, TX</ion-option>
+          <ion-option value="chicago">Chicago, IL</ion-option>
+          <ion-option value="seattle">Seattle, WA</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <p>
+      
+    </p>
+  </div>
+</ion-content>

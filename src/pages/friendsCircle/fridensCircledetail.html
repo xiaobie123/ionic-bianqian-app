@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>详情</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-card  class="detail-card">
+  <ion-item>
+    <ion-avatar item-left>
+      <img src={{Friend.headimg}}>
+    </ion-avatar>
+    <h2>{{Friend.name}}</h2>
+  </ion-item>
+  <ion-grid>
+  <ion-row>
+    <ion-col width-33 *ngFor="let Fimg of Friend.img">
+    <img src={{Fimg}}>
+  </ion-col>
+  </ion-row>
+</ion-grid>
+  <ion-card-content>
+    <p>{{Friend.contentText}}</p>
+  </ion-card-content>
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small (click)="clickLike(Friend)">
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>{{Friend.like}}赞</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small (click)="commentAlert()">
+        <ion-icon name="text"></ion-icon>
+        <div>{{Friend.comments}}评论</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        {{Friend.date}}
+      </ion-note>
+    </ion-col>
+  </ion-row>
+</ion-card>
+<ion-list>
+<div>
+  <ion-item>
+    <ion-avatar item-left>
+      <img src="assets/img/speakers/cheetah.jpg">
+    </ion-avatar>
+    <h2>小明</h2>
+    <p>12月26日</p>
+    <button ion-button clear item-right (click)="commentAlert('小明')">回复</button>
+  </ion-item>
+    <div class="item-comment" padding-right>
+      感觉你发的说说不是太好
+      <p><span class="item-comment-name">小明</span>回复<span class="item-comment-name">小华:</span>
+      尼玛！怎么不好了
+      </p>
+    </div>
+  </div>
+</ion-list>
+</ion-content>

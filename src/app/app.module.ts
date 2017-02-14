@@ -25,7 +25,7 @@ import { WriteDynamic } from '../pages/friendsCircle/WriteDynamic';
 import { FridensCircledetail } from '../pages/friendsCircle/fridensCircledetail';
 import { Chart } from '../pages/Chart/chart';
 
-import { ConferenceData } from '../providers/conference-data';
+import { ConferenceData } from '../providers/conference-data';/*ff*/
 import { UserData } from '../providers/user-data';
 
 

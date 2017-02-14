@@ -15,5 +15,7 @@ ionic serve
 ps：可以装个nvm这样就可以nodejs多版本共存了。
 
 
-
+## 效果可以看一下 ##
+![](https://xiaobie123.github.io/ionic-bianqian-app/demo图片/jdfw.gif)
+![](https://xiaobie123.github.io/ionic-bianqian-app/demo图片/jdfw2.gif)
 
